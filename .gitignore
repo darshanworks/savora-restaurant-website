@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Build files
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Cache
+.cache/
+
+# Mac system files
+.AppleDouble
+.LSOverride
+
+# Windows system files
+Desktop.ini

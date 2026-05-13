@@ -1,0 +1,272 @@
+/* ============================================================
+   responsive-style.css
+   Breakpoints: 1199px | 991px | 767px | 575px
+   ============================================================ */
+
+/* ============================================================
+   Large Desktop: max-width 1199px
+   ============================================================ */
+@media (max-width: 1199px) {
+  h1 {
+    font-size: 58px;
+  }
+
+  .hero-food-img {
+    max-height: 420px;
+  }
+
+  .about-experience-badge {
+    right: 0;
+  }
+}
+
+/* ============================================================
+   Tablet / Small Laptop: max-width 991px
+   ============================================================ */
+@media (max-width: 991px) {
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  /* --- NAVBAR --- */
+  .header_wrapper .navbar-brand img {
+    max-width: 90px;
+  }
+
+  /* Collapsed menu styling */
+  .header_wrapper .navbar-collapse {
+    background: rgba(15, 23, 42, 0.97);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(245, 158, 11, 0.15);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.15);
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 16px;
+  }
+
+  .header_wrapper .menu-navbar-nav {
+    text-align: center;
+    gap: 4px;
+  }
+
+  .header_wrapper .nav-item {
+    margin: 2px 0;
+  }
+
+  .header_wrapper .nav-item .nav-link {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  .header_wrapper .nav-item .nav-link::after {
+    display: none;
+  }
+
+  .nav-cart-btn {
+    margin: 10px auto 0;
+  }
+
+  /* --- HERO --- */
+  .banner_wrapper {
+    padding-top: 80px;
+  }
+  .hero-food-img {
+    max-height: 340px;
+  }
+  .badge-float-1,
+  .badge-float-2 {
+    display: none;
+  }
+
+  /* --- ABOUT --- */
+  .about-experience-badge {
+    right: 0;
+    bottom: 16px;
+  }
+
+  /* --- NEWSLETTER --- */
+  .newsletter-box {
+    padding: 36px 30px;
+  }
+
+  /* --- RESERVATION --- */
+  .reservation-form-card {
+    padding: 30px;
+  }
+}
+
+/* ============================================================
+   Mobile Large: max-width 767px
+   ============================================================ */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  /* --- HERO --- */
+  .banner_wrapper {
+    min-height: auto;
+    padding-bottom: 50px;
+  }
+
+  .hero-text-col {
+    padding-top: 30px;
+    order: 2;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-food-img {
+    max-height: 260px;
+  }
+
+  /* --- STATS --- */
+  .stat-card {
+    padding: 24px 16px;
+  }
+  .stat-card h3 {
+    font-size: 32px;
+  }
+
+  /* --- ABOUT --- */
+  .about-experience-badge {
+    position: static;
+    display: inline-block;
+    margin-top: 16px;
+    border-radius: 12px;
+  }
+
+  /* --- FOOD CARD --- */
+  .food-img-wrapper {
+    height: 190px;
+  }
+
+  /* --- TESTIMONIALS --- */
+  .testimonial-card {
+    padding: 28px 24px;
+  }
+  .testimonial-text::before {
+    display: none;
+  }
+
+  /* --- RESERVATION --- */
+  .reservation-form-card {
+    padding: 24px 20px;
+  }
+
+  /* --- NEWSLETTER --- */
+  .newsletter-box {
+    padding: 30px 20px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  /* --- FOOTER --- */
+  .footer_wrapper {
+    padding-top: 60px;
+  }
+  .footer-bottom-links {
+    justify-content: center;
+  }
+  .footer-heading::after {
+    display: none;
+  }
+
+  /* --- CART SIDEBAR --- */
+  .cart-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+
+  /* --- SCROLL TOP --- */
+  #scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ============================================================
+   Mobile Small: max-width 575px
+   ============================================================ */
+/* ============================================================
+   iPhone SE Overflow Fix
+   ============================================================ */
+@media (max-width: 575px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .container,
+  .container-fluid,
+  .row {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Hero Image Wrapper */
+  .hero-img-wrapper,
+  .banner-img,
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Blob Shape Behind Image */
+  .hero-img-wrapper::before,
+  .hero-img-wrapper::after,
+  .shape,
+  .hero-shape {
+    max-width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Chef Image */
+  .hero-food-img,
+  .banner-img img,
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Savora Kitchen & Bar — Premium Restaurant</title>
+
+    <!-- FAVICON -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/images/branding/favicon.png"
+    />
+
+    <!-- ===================== CDN LINKS ===================== -->
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts: Playfair Display + Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS — Scroll Animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+
+    <!-- Custom Stylesheets (paths preserved) -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="75">
+    <!-- ===================== SCROLL TO TOP BUTTON ===================== -->
+    <button id="scrollTopBtn" title="Back to top" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ===================== CART SIDEBAR ===================== -->
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h5><i class="fas fa-shopping-cart me-2"></i>Your Order</h5>
+        <button id="closeCart" class="cart-close-btn" aria-label="Close cart">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItemsList">
+        <div class="cart-empty">
+          <i class="fas fa-utensils"></i>
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+      <div class="cart-footer" id="cartFooter" style="display: none">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="main-btn w-100 mt-3">
+          <i class="fas fa-credit-card me-2"></i>Checkout
+        </button>
+      </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <!-- ===================== TOAST NOTIFICATION ===================== -->
+    <div id="toastNotification" class="toast-notification">
+      <i class="fas fa-check-circle me-2"></i>
+      <span id="toastMessage">Item added to cart!</span>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header_wrapper">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <!-- Brand Logo -->
+          <a class="navbar-brand" href="#">
+            <img
+              decoding="async"
+              src="./assets/images/branding/logo.png"
+              class="img-fluid"
+              alt="Logo"
+            />
+          </a>
+
+          <!-- Mobile Toggle -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+
+          <!-- Nav Links -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav menu-navbar-nav align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about"> About </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#menu"> Menu </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonials"> Reviews </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contact"> Contact </a>
+              </li>
+              <!-- Cart Icon -->
+              <li class="nav-item">
+                <button
+                  class="nav-cart-btn"
+                  id="openCartBtn"
+                  aria-label="Open cart"
+                >
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="cart-count" id="cartCount">0</span>
+                </button>
+              </li>
+              <!-- CTA Button -->
+              <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                <a class="main-btn" href="#menu"> Order Now </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Navbar End -->
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section id="home" class="banner_wrapper">
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <!-- Hero Text -->
+          <div
+            class="col-lg-5 text-center text-lg-start order-lg-1 order-2 hero-text-col"
+          >
+            <span class="hero-badge" data-aos="fade-right" data-aos-delay="100">
+              <i class="fas fa-award me-1"></i> Fresh Ingredients • Modern
+              Dining
+            </span>
+            <h1 data-aos="fade-right" data-aos-delay="200">
+              <span class="hero-title-line">Savora</span>
+              <span class="hero-title-accent">Kitchen & Bar</span>
+            </h1>
+            <p data-aos="fade-right" data-aos-delay="350">
+              Experience culinary excellence where every dish tells a story.
+              Crafted by award-winning chefs using the finest seasonal
+              ingredients, in an atmosphere of timeless elegance.
+            </p>
+            <div
+              class="hero-cta-group mt-4"
+              data-aos="fade-up"
+              data-aos-delay="450"
+            >
+              <a class="main-btn me-3" href="#menu">
+                <i class="fas fa-utensils me-2"></i>Explore Menu
+              </a>
+              <a class="main-btn btn-outline-gold" href="#reservation">
+                <i class="fas fa-calendar-check me-2"></i>Book a Table
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div
+            class="col-lg-7 text-center order-lg-2 order-1"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="hero-img-wrapper">
+              <img
+                decoding="async"
+                src="./assets/images/hero/hero-chef.png"
+                class="img-fluid hero-food-img"
+                alt="Hero Food"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Preview Cards -->
+        <div class="row top-menu g-3 pb-5">
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="preview-card">
+              <img
+                decoding="async"
+                src="./assets/images/menu/menu-2.png"
+                alt="menu item"
+                loading="lazy"
+              />
+              <div class="preview-overlay"><span>View Item</span></div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="preview-card">
+              <img
+                decoding="async"
+                src="./assets/images/menu/menu-4.png"
+                alt="menu item"
+                loading="lazy"
+              />
+              <div class="preview-overlay"><span>View Item</span></div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="preview-card">
+              <img
+                decoding="async"
+                src="./assets/images/menu/menu-5.png"
+                alt="menu item"
+                loading="lazy"
+              />
+              <div class="preview-overlay"><span>View Item</span></div>
+            </div>
+          </div>
+          <div
+            class="col-lg-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="preview-card">
+              <img
+                decoding="async"
+                src="./assets/images/menu/menu-6.png"
+                alt="menu item"
+                loading="lazy"
+              />
+              <div class="preview-overlay"><span>View Item</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section id="about" class="about_wrapper">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- About Image -->
+          <div
+            class="col-lg-6 mb-4 mb-lg-0 order-lg-1 order-1"
+            data-aos="fade-right"
+          >
+            <div class="about-img-wrapper">
+              <img
+                decoding="async"
+                src="./assets/images/about/about-chef.png"
+                class="img-fluid about-main-img"
+                alt="About Us"
+                loading="lazy"
+              />
+              <div class="about-experience-badge">
+                <span class="badge-num">15+</span>
+                <span class="badge-label">Years of Excellence</span>
+              </div>
+            </div>
+          </div>
+          <!-- About Text -->
+          <div
+            class="col-lg-6 order-lg-2 order-2"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <span class="section-tag">Our Story</span>
+            <h2>
+              Passion Served On <span class="gold-text">Every Plate</span>
+            </h2>
+            <p class="mb-3">
+              Nestled on the scenic lakeside, our restaurant is more than a
+              Savora destination — it's an experience. Since 2009, we have been
+              crafting unforgettable meals using locally sourced, seasonal
+              ingredients.
+            </p>
+            <p class="mb-4">
+              Our award-winning chefs bring creativity and technique to every
+              dish, while our warm, attentive team ensures every visit feels
+              like a special occasion.
+            </p>
+            <div class="about-features row g-3 mb-4">
+              <div class="col-6">
+                <div class="about-feature-item">
+                  <i class="fas fa-leaf"></i>
+                  <span>Fresh Ingredients</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="about-feature-item">
+                  <i class="fas fa-fire"></i>
+                  <span>Expert Chefs</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="about-feature-item">
+                  <i class="fas fa-glass-cheers"></i>
+                  <span>Premium Ambiance</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="about-feature-item">
+                  <i class="fas fa-heart"></i>
+                  <span>Made with Love</span>
+                </div>
+              </div>
+            </div>
+            <a href="#reservation" class="main-btn">
+              <i class="fas fa-calendar-check me-2"></i>Book a Table
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About End -->
+
+    <!-- ===================== MENU SECTION ===================== -->
+    <section id="menu" class="menu_wrapper">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12" data-aos="fade-up">
+            <span class="section-tag">Our Menu</span>
+            <h2>Crafted For <span class="gold-text">Every Craving</span></h2>
+            <p class="section-subtitle">
+              Explore our curated selection of signature dishes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div class="row g-4 menu-grid">
+          <!-- Card 1 -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="food-card">
+              <div class="food-img-wrapper">
+                <img
+                  decoding="async"
+                  src="./assets/images/menu/menu-1.png"
+                  alt="Fresh Pizza"
+                  loading="lazy"
+                />
+                <span class="category-badge pizza-badge">Pizza</span>
+              </div>
+              <div class="food-card-body">
+                <div class="food-meta">
+                  <div class="food-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(128)</span>
+                  </div>
+                  <span class="food-price">₹499</span>
+                </div>
+                <h5 class="food-name">Margherita Pizza</h5>
+                <p class="food-desc">
+                  San Marzano tomatoes, fresh mozzarella, basil, extra virgin
+                  olive oil.
+                </p>
+                <button
+                  class="main-btn w-100 mt-2 add-cart-btn"
+                  onclick="addToCart('Margherita Pizza', 499, this)"
+                >
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="food-card">
+              <div class="food-img-wrapper">
+                <img
+                  decoding="async"
+                  src="./assets/images/menu/menu-2.png"
+                  alt="Classic Burger"
+                  loading="lazy"
+                />
+                <span class="category-badge burger-badge">Burger</span>
+                <div class="food-img-overlay"></div>
+              </div>
+              <div class="food-card-body">
+                <div class="food-meta">
+                  <div class="food-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(204)</span>
+                  </div>
+                  <span class="food-price">₹399</span>
+                </div>
+                <h5 class="food-name">Wagyu Smash Burger</h5>
+                <p class="food-desc">
+                  Double wagyu patty, smoked cheddar, caramelized onions,
+                  truffle aioli.
+                </p>
+                <button
+                  class="main-btn w-100 mt-2 add-cart-btn"
+                  onclick="addToCart('Wagyu Smash Burger', 399, this)"
+                >
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="food-card">
+              <div class="food-img-wrapper">
+                <img
+                  decoding="async"
+                  src="./assets/images/menu/menu-3.png"
+                  alt="Signature Drink"
+                  loading="lazy"
+                />
+                <span class="category-badge drink-badge">Drink</span>
+                <div class="food-img-overlay"></div>
+              </div>
+              <div class="food-card-body">
+                <div class="food-meta">
+                  <div class="food-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(87)</span>
+                  </div>
+                  <span class="food-price">₹249</span>
+                </div>
+                <h5 class="food-name">Signature Mocktail</h5>
+                <p class="food-desc">
+                  House blend of tropical fruits, fresh mint, sparkling water,
+                  lime zest.
+                </p>
+                <button
+                  class="main-btn w-100 mt-2 add-cart-btn"
+                  onclick="addToCart('Signature Mocktail', 249, this)"
+                >
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="food-card">
+              <div class="food-img-wrapper">
+                <img
+                  decoding="async"
+                  src="./assets/images/menu/menu-4.png"
+                  alt="Dessert"
+                  loading="lazy"
+                />
+                <span class="category-badge dessert-badge">Dessert</span>
+                <div class="food-img-overlay"></div>
+              </div>
+              <div class="food-card-body">
+                <div class="food-meta">
+                  <div class="food-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(312)</span>
+                  </div>
+                  <span class="food-price">₹99</span>
+                </div>
+                <h5 class="food-name">Lava Chocolate Cake</h5>
+                <p class="food-desc">
+                  Warm Belgian chocolate, molten center, vanilla bean ice cream.
+                </p>
+                <button
+                  class="main-btn w-100 mt-2 add-cart-btn"
+                  onclick="addToCart('Lava Chocolate Cake', 99, this)"
+                >
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="food-card">
+              <div class="food-img-wrapper">
+                <img
+                  decoding="async"
+                  src="./assets/images/menu/menu-5.png"
+                  alt="BBQ Chicken Pizza"
+                  loading="lazy"
+                />
+                <span class="category-badge pizza-badge">Pizza</span>
+                <span class="chef-special-badge"
+                  ><i class="fas fa-fire me-1"></i>Chef's Pick</span
+                >
+                <div class="food-img-overlay"></div>
+              </div>
+              <div class="food-card-body">
+                <div class="food-meta">
+                  <div class="food-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(176)</span>
+                  </div>
+                  <span class="food-price">₹349</span>
+                </div>
+                <h5 class="food-name">BBQ Chicken Pizza</h5>
+                <p class="food-desc">
+                  Smoked chicken, BBQ glaze, red onion, jalapeño, cheddar blend.
+                </p>
+                <button
+                  class="main-btn w-100 mt-2 add-cart-btn"
+                  onclick="addToCart('BBQ Chicken Pizza', 349, this)"
+                >
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <div class="food-card">
+              <div class="food-img-wrapper">
+                <img
+                  decoding="async"
+                  src="./assets/images/menu/menu-6.png"
+                  alt="Vegan Burger"
+                  loading="lazy"
+                />
+                <span class="category-badge burger-badge">Burger</span>
+                <div class="food-img-overlay"></div>
+              </div>
+              <div class="food-card-body">
+                <div class="food-meta">
+                  <div class="food-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(93)</span>
+                  </div>
+                  <span class="food-price">₹299</span>
+                </div>
+                <h5 class="food-name">Vegan Garden Burger</h5>
+                <p class="food-desc">
+                  Plant-based patty, roasted peppers, avocado, tahini slaw.
+                </p>
+                <button
+                  class="main-btn w-100 mt-2 add-cart-btn"
+                  onclick="addToCart('Vegan Garden Burger', 299, this)"
+                >
+                  <i class="fas fa-cart-plus me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Menu Grid End -->
+      </div>
+    </section>
+    <!-- Menu End -->
+
+    <!-- ===================== TESTIMONIALS SECTION ===================== -->
+    <section id="testimonials" class="testimonials_wrapper">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12" data-aos="fade-up">
+            <span class="section-tag">Testimonials</span>
+            <h2>What Our <span class="gold-text">Guests Say</span></h2>
+            <p class="section-subtitle">
+              Real words from our valued customers.
+            </p>
+          </div>
+        </div>
+        <!-- Swiper Slider -->
+        <div class="testimonial-swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4">
+            <!-- Slide 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  "Absolutely incredible Savora experience. The lakeside view
+                  paired with the exquisite food made our anniversary
+                  unforgettable. The truffle pasta alone is worth the visit!"
+                </p>
+                <div class="testimonial-author">
+                  <img
+                    src="./assets/images/testimonials/user-1.png"
+                    alt="Suraj"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h6>Suraj Suvare</h6>
+                    <small>Food Blogger, Mumbai</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                  "The wagyu burger is legitimately the best I've ever had.
+                  Service was impeccable — they remembered my name from my last
+                  visit. This is fine savora done right."
+                </p>
+                <div class="testimonial-author">
+                  <img
+                    src="./assets/images/testimonials/user-2.png"
+                    alt="Yuvraj"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h6>Yuvraj Mishra</h6>
+                    <small>Chef, Mumbai</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">
+                  "Brought my family here for my father's birthday. The
+                  reservation process was seamless, the food arrived piping hot,
+                  and the desserts were phenomenal. We'll be back."
+                </p>
+                <div class="testimonial-author">
+                  <img
+                    src="./assets/images/testimonials/user-1.png"
+                    alt="Priya K."
+                    loading="lazy"
+                  />
+                  <div>
+                    <h6>Priya Kapoor</h6>
+                    <small>Regular Guest, Mumbai</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials End -->
+
+    <!-- ===================== RESERVATION SECTION ===================== -->
+    <section id="reservation" class="reservation_wrapper">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5" data-aos="fade-right">
+            <span class="section-tag">Reservations</span>
+            <h2>Reserve Your <span class="gold-text">Table</span></h2>
+            <p class="mb-4">
+              Secure your spot for an unforgettable savora experience. We'll
+              take care of the rest — all you need to bring is your appetite.
+            </p>
+            <div class="reservation-info">
+              <div class="res-info-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <strong>Opening Hours</strong>
+                  <p>Mon–Fri: 11am – 11pm<br />Sat–Sun: 10am – 12am</p>
+                </div>
+              </div>
+              <div class="res-info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                  <strong>Call Us</strong>
+                  <p>+1 (555) 123-4567</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
+            <div class="reservation-form-card">
+              <h4 class="mb-4">
+                <i class="fas fa-calendar-check me-2 gold-text"></i>Book a Table
+              </h4>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-group-modern">
+                    <i class="fas fa-user form-icon"></i>
+                    <input
+                      type="text"
+                      id="resName"
+                      class="form-input-modern"
+                      placeholder="Full Name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group-modern">
+                    <i class="fas fa-envelope form-icon"></i>
+                    <input
+                      type="email"
+                      id="resEmail"
+                      class="form-input-modern"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group-modern">
+                    <i class="fas fa-users form-icon"></i>
+                    <select id="resGuests" class="form-input-modern">
+                      <option value="" disabled selected>No. of Guests</option>
+                      <option>1 Guest</option>
+                      <option>2 Guests</option>
+                      <option>3-4 Guests</option>
+                      <option>5-6 Guests</option>
+                      <option>7+ Guests</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group-modern">
+                    <i class="fas fa-phone form-icon"></i>
+                    <input
+                      type="tel"
+                      id="resPhone"
+                      class="form-input-modern"
+                      placeholder="Phone Number"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group-modern">
+                    <i class="fas fa-calendar form-icon"></i>
+                    <input
+                      type="date"
+                      id="resDate"
+                      class="form-input-modern"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group-modern">
+                    <i class="fas fa-clock form-icon"></i>
+                    <select id="resTime" class="form-input-modern">
+                      <option value="" disabled selected>Preferred Time</option>
+                      <option>11:00 AM</option>
+                      <option>12:00 PM</option>
+                      <option>1:00 PM</option>
+                      <option>2:00 PM</option>
+                      <option>6:00 PM</option>
+                      <option>7:00 PM</option>
+                      <option>8:00 PM</option>
+                      <option>9:00 PM</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group-modern">
+                    <i class="fas fa-comment form-icon" style="top: 16px"></i>
+                    <textarea
+                      id="resNotes"
+                      class="form-input-modern"
+                      rows="3"
+                      placeholder="Special requests or notes..."
+                      style="padding-top: 12px; resize: none"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button
+                    type="button"
+                    class="main-btn w-100"
+                    onclick="submitReservation()"
+                  >
+                    <i class="fas fa-check-circle me-2"></i>Confirm Reservation
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Reservation End -->
+
+    <!-- ===================== NEWSLETTER SECTION ===================== -->
+    <section class="newsletter_wrapper">
+      <div class="container" data-aos="zoom-in">
+        <div class="newsletter-box">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+              <span class="section-tag">Newsletter</span>
+              <h3>
+                Stay Updated With Our
+                <span class="gold-text">Latest Offers</span>
+              </h3>
+              <p>
+                Subscribe to receive exclusive deals, new menu alerts, and event
+                invitations straight to your inbox.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="newsletter-form">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  id="newsletterEmail"
+                />
+                <button type="button" onclick="subscribeNewsletter()">
+                  <i class="fas fa-paper-plane me-2"></i>Subscribe
+                </button>
+              </div>
+              <p class="newsletter-privacy">
+                <i class="fas fa-lock me-1"></i>We respect your privacy. No
+                spam, ever.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Newsletter End -->
+
+    <!-- ===================== FOOTER / CONTACT SECTION ===================== -->
+    <footer id="contact" class="footer_wrapper">
+      <div class="container">
+        <div class="row g-5 footer-top">
+          <!-- Brand Column -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-brand">
+              <img
+                decoding="async"
+                src="./assets/images/branding/logo.png"
+                alt="Logo"
+                class="footer-logo"
+              />
+              <p class="mt-3">
+                A lakeside savora destination offering premium cuisine crafted
+                with passion and served with warmth.
+              </p>
+              <div class="social-icons mt-4">
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="Facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" aria-label="Twitter"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" aria-label="YouTube"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li>
+                <a href="#home"
+                  ><i class="fas fa-chevron-right me-2"></i>Home</a
+                >
+              </li>
+              <li>
+                <a href="#about"
+                  ><i class="fas fa-chevron-right me-2"></i>About Us</a
+                >
+              </li>
+              <li>
+                <a href="#menu"
+                  ><i class="fas fa-chevron-right me-2"></i>Our Menu</a
+                >
+              </li>
+
+              <li>
+                <a href="#reservation"
+                  ><i class="fas fa-chevron-right me-2"></i>Reservations</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Opening Hours -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Opening Hours</h5>
+            <ul class="footer-hours">
+              <li>
+                <span>Monday – Friday</span>
+                <span class="gold-text">11:00 AM – 11:00 PM</span>
+              </li>
+              <li>
+                <span>Saturday</span>
+                <span class="gold-text">10:00 AM – 12:00 AM</span>
+              </li>
+              <li>
+                <span>Sunday</span>
+                <span class="gold-text">10:00 AM – 10:00 PM</span>
+              </li>
+            </ul>
+            <div class="footer-reservation-cta mt-3">
+              <a href="#reservation" class="main-btn btn-sm-gold">
+                <i class="fas fa-calendar-check me-1"></i>Reserve Now
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Contact Us</h5>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 Lakeside Drive, Lake District, NY 10001</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span>+1 (555) 123-4567</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@savorakitchenandbar.com</span>
+              </li>
+            </ul>
+            <!-- Google Maps Embed Placeholder -->
+            <div class="map-placeholder mt-3">
+              <i class="fas fa-map-marked-alt"></i>
+              <span>View on Google Maps</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Footer Bottom -->
+        <div class="row align-items-center footer-bottom">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="copyright-text mb-0">
+              © 2026 <span class="gold-text">Savora Kitchen & Bar</span>. All
+              Rights Reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+            <ul class="footer-bottom-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- ===================== CDN SCRIPTS ===================== -->
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+    <!-- AOS — Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- VanillaTilt — 3D Tilt Effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+
+    <!-- Custom JS (path preserved) -->
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
