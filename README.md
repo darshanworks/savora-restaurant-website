@@ -82,7 +82,7 @@ savora-kitchen/
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/savora-kitchen.git
+git clone https://github.com/darshanworks/savora-kitchen.git
 ```
 
 2. Open the project folder
@@ -104,8 +104,7 @@ Add your deployed project link here.
 Example:
 
 ```bash
-https://your-live-demo-link.com
-```
+https://darshanworks.github.io/savora-restaurant-website/```
 
 ---
 
@@ -121,7 +120,7 @@ https://your-live-demo-link.com
 
 ## 👨‍💻 Author
 
-Developed by Darshan Malgonvkar
+Developed by Darshan Malagonvkar
 
 ---
 
