@@ -20,6 +20,25 @@ This project showcases a clean restaurant landing page with smooth animations, i
 
 ---
 
+## 🌐 Live Demo
+
+```bash
+https://darshanworks.github.io/savora-restaurant-website/
+```
+
+---
+
+## 📸 Desktop Preview
+
+![Desktop Preview](preview/homepage-preview.png)
+![Desktop Preview](preview/menu-preview.png)
+
+## 📱 Mobile Preview
+
+![Mobile Preview](preview/mobile-preview.png)
+
+---
+
 ## 🛠️ Technologies Used
 
 - HTML5
@@ -64,19 +83,6 @@ savora-kitchen/
 └── .gitignore
 ```
 
----
-
-## 📸 Desktop Preview
-
-![Desktop Preview](preview/homepage-preview.png)
-![Desktop Preview](preview/menu-preview.png)
-
-## 📱 Mobile Preview
-
-![Mobile Preview](preview/mobile-preview.png)
-
----
-
 ## ⚙️ Installation
 
 1. Clone the repository
@@ -96,15 +102,6 @@ cd savora-kitchen
 Simply open `index.html` in your browser.
 
 ---
-
-## 🌐 Live Demo
-
-Add your deployed project link here.
-
-Example:
-
-```bash
-https://darshanworks.github.io/savora-restaurant-website/```
 
 ---
 
